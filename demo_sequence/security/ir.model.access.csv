@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_demo_sequence_demo_sequence,demo_sequence.demo_sequence,model_demo_sequence_demo_sequence,,1,0,0,0

@@ -1,0 +1,51 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+    <record model="ir.ui.view" id="demo_sequence.fcntl_list">
+      <field name="name">demo_sequence fcntl list</field>
+      <field name="model">demo_sequence.fcntl</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="sn" readonly="True"/>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="demo_sequence.ir_sequence_list">
+      <field name="name">demo_sequence ir.sequence list</field>
+      <field name="model">demo_sequence.sequence</field>
+      <field name="arch" type="xml">
+        <tree editable="bottom">
+          <field name="sn" readonly="True"/>
+          <field name="name"/>
+        </tree>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+    <record model="ir.actions.act_window" id="demo_sequence.action_window1">
+      <field name="name">fcntl</field>
+      <field name="res_model">demo_sequence.fcntl</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="demo_sequence.action_window2">
+      <field name="name">ir.sequence</field>
+      <field name="res_model">demo_sequence.sequence</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Top menu item -->
+    <menuitem name="demo_sequence" id="demo_sequence.menu_root"/>
+    <!-- menu categories -->
+    <menuitem name="fcntl" id="demo_sequence.menu_1" parent="demo_sequence.menu_root"/>
+    <menuitem name="ir.sequence" id="demo_sequence.menu_2" parent="demo_sequence.menu_root"/>
+
+    <!-- actions -->
+    <menuitem name="fcntl" id="demo_sequence.fcntl_list" parent="demo_sequence.menu_1"
+              action="demo_sequence.action_window1"/>
+    <menuitem name="ir.sequence" id="demo_sequence.sequence_list" parent="demo_sequence.menu_2"
+              action="demo_sequence.action_window2"/>
+  </data>
+</odoo>
